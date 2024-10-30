@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class TopDownCarController : MonoBehaviour
 {
     [Header("Car settings")]
     public float accelerationFactor = 30.0f;
@@ -42,4 +42,25 @@ public class NewBehaviourScript : MonoBehaviour
 
         ApplySteering();
     }
+
+    void ApplyEngineForce()
+    {
+        Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
+
+        carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
+    }
+
+    void ApplySteering()
+    {
+        rotationAngle -= steeringInput * turnFactor;
+
+        carRigidbody2D.MoveRotation(rotationAngle);
+    }
+
+    public void SetInputVector(Vector2 inputVector)
+    {
+        steeringInput = inputVector.x;
+        accelerationInput = inputVector.y;
+    }
+
 }
