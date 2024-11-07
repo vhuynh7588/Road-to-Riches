@@ -6,6 +6,8 @@ public class SC_2DCoin : MonoBehaviour
 {
     //Keep track of total picked coins (Since the value is static, it can be accessed at "SC_2DCoin.totalCoins" from any script)
     public static int totalCoins = 0; 
+    public delegate void CoinCollected(GameObject coin);
+    public event CoinCollected OnCoinCollected;
 
     void Awake()
     {
@@ -22,6 +24,8 @@ public class SC_2DCoin : MonoBehaviour
             totalCoins++;
             //Test: Print total number of coins
             Debug.Log("You currently have " + SC_2DCoin.totalCoins + " Coins.");
+
+            OnCoinCollected?.Invoke(gameObject);
             //Destroy coin
             Destroy(gameObject);
         }
