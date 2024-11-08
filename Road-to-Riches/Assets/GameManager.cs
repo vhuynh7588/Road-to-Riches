@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameOverScreen GameOverScreen;
+    int maxPlatform = 0;
     public static GameManager instance;
     public Text scoreText;  // Reference to a UI Text component for score display
     private int score = 0;
+
     // Start is called before the first frame update
 
     private void Awake()
