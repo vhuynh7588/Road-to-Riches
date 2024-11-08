@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 276067768}
   - component: {fileID: 276067767}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.37777773}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: -1}
+  m_AnchoredPosition: {x: -2, y: 27.5}
   m_SizeDelta: {x: 178.3462, y: -6.653801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276067767
@@ -431,7 +431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10 Coins
+  m_Text: Coins
 --- !u!222 &276067768
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -636,6 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621864299}
   - component: {fileID: 621864300}
+  - component: {fileID: 621864301}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -671,8 +672,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1588346286}
-  gameDuration: 15
-  GameOverScreen: {fileID: 0}
+  gameDuration: 10
+  GameOverScreen: {fileID: 1035948114}
+--- !u!114 &621864301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621864298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78843274d9b5424091954fd55ae11a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 53582800}
+  highScoreText: {fileID: 0}
 --- !u!1 &715606453
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +778,7 @@ GameObject:
   - component: {fileID: 754764778}
   - component: {fileID: 754764777}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,6 +1146,7 @@ RectTransform:
   m_Children:
   - {fileID: 1511864240}
   - {fileID: 276067766}
+  - {fileID: 1442653645}
   - {fileID: 1823354420}
   - {fileID: 754764776}
   m_Father: {fileID: 2044572400}
@@ -1152,7 +1168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78843274d9b5424091954fd55ae11a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 276067767}
+  highScoreText: {fileID: 1442653646}
 --- !u!114 &1035948115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1256,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1442653644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442653645}
+  - component: {fileID: 1442653647}
+  - component: {fileID: 1442653646}
+  m_Layer: 5
+  m_Name: HighScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1442653645
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442653644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1035948113}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.37777773}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: -3.3269043}
+  m_SizeDelta: {x: 178.3462, y: -6.653801}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1442653646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442653644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.93336487, g: 1, b: 0.06132078, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Coins
+--- !u!222 &1442653647
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442653644}
+  m_CullTransparentMesh: 1
 --- !u!1 &1511864239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1347,7 @@ GameObject:
   - component: {fileID: 1511864242}
   - component: {fileID: 1511864241}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1617,7 +1713,7 @@ GameObject:
   - component: {fileID: 1823354422}
   - component: {fileID: 1823354421}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,7 +1782,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1823354422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 621864301}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: RestartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1823354422
 MonoBehaviour:
   m_ObjectHideFlags: 0

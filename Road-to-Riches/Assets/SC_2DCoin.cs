@@ -25,6 +25,8 @@ public class SC_2DCoin : MonoBehaviour
             //Test: Print total number of coins
             Debug.Log("You currently have " + SC_2DCoin.totalCoins + " Coins.");
 
+            AudioSource coinSound = GetComponent<AudioSource>();
+            coinSound.Play();
             OnCoinCollected?.Invoke(gameObject);
             //Destroy coin
             Destroy(gameObject);
