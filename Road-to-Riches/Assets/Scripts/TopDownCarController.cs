@@ -7,8 +7,9 @@ public class TopDownCarController : MonoBehaviour
     [Header("Car settings")]
     public float driftFactor  = 0.95f;
     public float accelerationFactor = 30.0f;
+    //public int forwardSpeed = 10000.0;
     public float turnFactor = 3.5f;
-    public float maxSpeed = 200;
+    public float maxSpeed = 10000;
 
     //Local variables
     float accelerationInput = 0;
@@ -27,18 +28,6 @@ public class TopDownCarController : MonoBehaviour
         carRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //Frame-rate independent for physics calculations
     void FixedUpdate()
     {
@@ -52,6 +41,7 @@ public class TopDownCarController : MonoBehaviour
     void ApplyEngineForce()
     {
         velocityVsUp = Vector2.Dot(transform.up, carRigidbody2D.velocity);
+
 
         if(velocityVsUp > maxSpeed && accelerationInput > 0)
             return;
@@ -69,6 +59,7 @@ public class TopDownCarController : MonoBehaviour
         Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
 
         carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
+
 
     
     // // Get forward velocity vs. car orientation

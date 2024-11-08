@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameOverScreen GameOverScreen;
     public static GameManager instance;
     public Text scoreText;  // Reference to a UI Text component for score display
     private int score = 0;
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+    }
+
+    public void GameOver(){
+        GameOverScreen.Setup(maxPlatform);
     }
 
     public void AddScore(int points)
