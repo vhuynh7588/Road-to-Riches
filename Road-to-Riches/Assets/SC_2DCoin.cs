@@ -30,4 +30,8 @@ public class SC_2DCoin : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public static void ResetCoinCount()
+    {
+        totalCoins = 0;
+    }
 }

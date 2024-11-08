@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver(){
-        GameOverScreen.Setup(maxPlatform);
+        GameOverScreen.Setup(maxPlatform, score);
     }
 
     public void AddScore(int points)
